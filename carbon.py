@@ -27,7 +27,13 @@ def makexSpace(stepsize,years):
 years=20000
 
 def plotEQ(stepsize,years):
+    xSpace=makexSpace(stepsize,years)
     plt.plot(makexSpace(stepsize,years),euler(N0,stepsize,years))
+
+    ySpace = []
+    for i in range(len(xSpace)):
+        ySpace.append(N0*math.e**(-xSpace[i]/tao))
+    plt.plot(xSpace,ySpace)
     pass
 
 def pdiffatxyears(stepsize1,stepsize2,year):
