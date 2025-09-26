@@ -274,7 +274,7 @@ def plotspinTraj(theta):
     plt.plot(xVals,yVals)
 
 if args.theta:
-    theta=args.theta
+    theta=float(args.theta)
 else:
     theta=30
 
@@ -282,5 +282,5 @@ plotidealTraj(theta)
 plotdragTrajC1_2(theta)
 plotdragTraj(theta)
 plotspinTraj(theta)
-plt.savefig(f'golfPlotTheta{theta}')
+plt.savefig(f'golfPlotTheta{theta}.png')
 

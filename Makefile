@@ -1,13 +1,9 @@
 PYTHON := python3
-SCRIPT := trigonometry.py
 
-.PHONY: plot write read
+.PHONY: carbon golf
 
-plot:
-	$(PYTHON) $(SCRIPT) --function $(FXN) --print $(FMT)
+carbon:
+	$(PYTHON) carbon.py --plot=$(WIDTH)
 
-write:
-	$(PYTHON) $(SCRIPT) --write $(TXT) --function $(FXN)
-
-read:
-	$(PYTHON) $(SCRIPT) --print $(FMT) --read_from_file $(TXT)
+golf:
+	$(PYTHON) golf.py --theta=$(THETA)

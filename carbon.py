@@ -1,3 +1,4 @@
+import argparse
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -48,7 +49,7 @@ def realpdiff(stepsize,year):
 #plotEQ(5000,years)
 
 if args.plot:
-    stepsize=args.plot
+    stepsize=int(args.plot)
     plotEQ(stepsize,years)
 else:
     stepsize=100
