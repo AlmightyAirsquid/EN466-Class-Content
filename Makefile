@@ -1,9 +1,17 @@
 PYTHON := python3
+RUN := 1
 
-.PHONY: carbon golf
+.PHONY: diffusion gases oscillator poisson rnumbers rwalk
 
-carbon:
-	$(PYTHON) carbon.py --plot=$(WIDTH)
-
-golf:
-	$(PYTHON) golf.py --theta=$(THETA)
+diffusion:
+	$(PYTHON) diffusion.py --RUN=$(RUN)
+gases:
+	$(PYTHON) gases.py --RUN=$(RUN)
+oscillator:
+	$(PYTHON) oscillator.py --RUN=$(RUN)
+poisson:
+	$(PYTHON) poisson.py --RUN=$(RUN)
+rnumbers:
+	$(PYTHON) rnumbers.py --RUN=$(RUN)
+rwalk:
+	$(PYTHON) rwalk.py --RUN=$(RUN)
