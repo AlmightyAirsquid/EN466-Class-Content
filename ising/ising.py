@@ -221,7 +221,7 @@ tlist = [0.01,0.1,1,10,100,1000]
 def mp4wTsXs(Xlist,Tlist,N=400, f=25):
     for X in Xlist:
         g = grid(X)
-        g.mp4wTs(N, Tlist)
+        g.mp4wTs(N, Tlist, f)
 
 def setup():
     h = grid(25)
@@ -270,9 +270,12 @@ if __name__=='__main__':
     parser.add_argument('--temp', '-T', type=float)
     parser.add_argument('--fps','-F', type=int)
     parser.add_argument('--dimension','-D', type=int)
-
+    parser.add_argument('--seed', type=int)
 
     args = parser.parse_args()
+
+    if args.seed:
+        random.seed(args.seed)
     
     if args.iterations:
         N = args.iterations
@@ -280,7 +283,7 @@ if __name__=='__main__':
         N = 2500
         
     if args.temp:
-        tempList = list(args.temp)
+        tempList = [args.temp]
     else:
         tempList = [1]
         
@@ -290,7 +293,7 @@ if __name__=='__main__':
         f = 1000
 
     if args.dimension:
-        Xlist=list(args.dimension)
+        Xlist=[args.dimension]
     else:
         Xlist = [50]
         
