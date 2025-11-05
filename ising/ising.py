@@ -38,6 +38,7 @@ class grid:
         self.yrange = range(self.gety())
             
         self.grid = self.makeGrid()
+        self.randomPopulate()
         self.t = 0
         
         self.initialGrid = self.getgrid()
